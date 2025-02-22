@@ -121,8 +121,7 @@ jobs:
 
     name: Build+Push
 
-    # runs-on: ubuntu-latest
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     outputs:
       # only outputs the unique gha- image tag that's unique to each GHA run
