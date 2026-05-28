@@ -144,14 +144,14 @@ jobs:
 
       - name: Login to DockerHub
         if: inputs.dockerhub-enable
-        uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2 #v4.0.0
+        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 #v4.1.0
         with:
           username: ${{ secrets.dockerhub-username }}
           password: ${{ secrets.dockerhub-token }}
 
       - name: Login to GHCR
         if: inputs.ghcr-enable
-        uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2 #v4.0.0
+        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 #v4.1.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -172,7 +172,7 @@ jobs:
         # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
       - name: Docker Build and Push
         id: build_image
-        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 #v7.0.0
+        uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f #v7.1.0
         with:
           platforms: ${{ inputs.platforms }}
           # this action is expected to receive user inputs directly, so no sanitization here
